@@ -33,6 +33,41 @@ export DB_PORT=5432
 export DB_NAME=testdb
 export DB_USER=postgres
 export DB_PASSWORD=secret
+```
 
-# Запустить приложение
-python app/app.py
+## 🐳 Запуск через Docker
+
+### Быстрый старт:
+
+```bash
+# 1. Клонировать репозиторий
+git clone https://github.com/Artko06/InnoTech_Solutions_DevOps.git
+cd InnoTech_Solutions_DevOps
+
+# 2. Создать .env из шаблона
+cp .env.example .env
+
+# 3. Отредактировать .env — вписать надёжный пароль
+nano .env
+
+# 4. Собрать и запустить
+docker compose up -d
+
+# 5. Проверить
+docker ps
+curl http://localhost/health
+```
+
+Приложение будет доступно по адресам `http://localhost`, `http://localhost/health`, `http://localhost/data`.
+
+### Переменные окружения
+
+Все переменные задаются в файле `.env` (не коммитится в Git). Шаблон — в `.env.example`:
+
+| Переменная | Описание | Пример |
+|---|---|---|
+| `DB_HOST` | Хост PostgreSQL в Docker-сети | `db` |
+| `DB_PORT` | Порт PostgreSQL | `5432` |
+| `DB_NAME` | Имя базы данных | `testdb` |
+| `DB_USER` | Пользователь PostgreSQL | `appuser` |
+| `DB_PASSWORD` | Пароль пользователя | `change_me`
