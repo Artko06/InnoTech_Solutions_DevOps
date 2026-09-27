@@ -66,6 +66,8 @@ curl http://localhost/health
 
 | Переменная | Описание | Пример |
 |---|---|---|
+| `DB_HOST` | Хост PostgreSQL в Docker-сети | `db` |
+| `DB_PORT` | Порт PostgreSQL | `5432` |
 | `DB_NAME` | Имя базы данных | `testdb` |
 | `DB_USER` | Пользователь PostgreSQL | `appuser` |
-| `DB_PASSWORD` | Пароль пользователя | `change_me` |
+| `DB_PASSWORD` | Пароль пользователя | `change_me`
